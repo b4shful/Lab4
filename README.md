@@ -3,6 +3,16 @@ EIE2 IAC Lab4 Group 29
 
  Please note this repo is private/unlisted and requires your GitHub account to be added to the permitted users list (so no one copies us lol) 
 
+# Task Allocations
+## Joel
+2. The Register File, ALU and the related MUX.
+## Tahni
+1. Program Counter and related adders.
+## Aisha
+3. The Control Unit, the Sign-extension Unit and the instruction memory.
+## Luke
+4. The testbench and verification of the design working via gtkWave and Vbuddy (where appropriate).
+
 # Cloning
 - Make sure you are in ~/Documents/iac directory (cd ~/Documents/iac)
 - Run "git clone https://github.com/b4shful/Lab4.git"
