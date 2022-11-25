@@ -9,7 +9,8 @@ module register_file #(
     input logic [ADDRESS_WIDTH-1:0] a3, // WD3 address
     input logic [DATA_WIDTH-1:0]    wd3, // wd3 data input
     output logic [DATA_WIDTH-1:0]   rd1, // rd1 data output
-    output logic [DATA_WIDTH-1:0]   rd2  // rd2 data output      
+    output logic [DATA_WIDTH-1:0]   rd2  // rd2 data output
+    output logic [DATA_WIDTH-1:0]   a0 // permanent access to x10 register for the purposes of this lab    
 );
 
 /* 
@@ -39,6 +40,7 @@ logic [DATA_WIDTH-1:0] regfile_array [2**ADDRESS_WIDTH-1:0];
 // assign read ports
 assign rd1 = regfile_array[a1];
 assign rd2 = regfile_array[a2];
+assign a0 = regfile_array[10]; // a0 output will show contents of x10 register for purposes of this lab
 
 // write assignments happen on positive clock edge
 always_ff @(posedge clk) begin
