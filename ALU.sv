@@ -1,5 +1,5 @@
 module ALU #(
-    parameter MUX_BITS = 3,
+    parameter CONTROL_BITS = 3,
               DATA_WIDTH = 32
 )(
     input logic  [MUX_BITS-1:0]      alu_control,
