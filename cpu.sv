@@ -60,7 +60,7 @@ sign_extend sgn_ext(
     .ImmSrc (imm_src),
     .ImmOp (imm_op)
 );
-reg_file register_file(
+register_file reg_file(
     .clk (clk),
     .a1 (rs1),
     .a2 (rs2),
