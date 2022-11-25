@@ -21,7 +21,7 @@ always_comb begin
         {MUX_BITS'('b010)}: result = operand_a & operand_b; // AND
         {MUX_BITS'('b011)}: result = operand_a | operand_b; // OR
         // {MUX_BITS'('b100)}:
-        {MUX_BITS'('b101)}: result = {DATA_WIDTH-1{1'b0}, operand_a < operand_b}; // SLT
+        {MUX_BITS'('b101)}: result = {{DATA_WIDTH-1{1'b0}}, operand_a < operand_b}; // SLT
         // {MUX_BITS'('b110)}:
         // {MUX_BITS'('b111)}:
         default:
