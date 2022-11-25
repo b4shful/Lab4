@@ -14,16 +14,16 @@ assign result_eq_zero = (result == {DATA_WIDTH{1'b0}});
 always_comb begin
     result = {DATA_WIDTH{1'b0}};
     case (alu_control)
-        //the below width casts should work to allow mux_bits to be changed later on
+        //the below width casts should work to allow CONTROL_BITS to be changed later on
         //these might need changed if it turns out it doesn't produce the right number
-        {MUX_BITS'('b000)}: result = operand_a + operand_b; // ADD
-        {MUX_BITS'('b001)}: result = operand_a - operand_b; // SUBTRACT
-        {MUX_BITS'('b010)}: result = operand_a & operand_b; // AND
-        {MUX_BITS'('b011)}: result = operand_a | operand_b; // OR
-        // {MUX_BITS'('b100)}:
-        {MUX_BITS'('b101)}: result = {{DATA_WIDTH-1{1'b0}}, operand_a < operand_b}; // SLT
-        // {MUX_BITS'('b110)}:
-        // {MUX_BITS'('b111)}:
+        {CONTROL_BITS'('b000)}: result = operand_a + operand_b; // ADD
+        {CONTROL_BITS'('b001)}: result = operand_a - operand_b; // SUBTRACT
+        {CONTROL_BITS'('b010)}: result = operand_a & operand_b; // AND
+        {CONTROL_BITS'('b011)}: result = operand_a | operand_b; // OR
+        // {CONTROL_BITS'('b100)}:
+        {CONTROL_BITS'('b101)}: result = {{DATA_WIDTH-1{1'b0}}, operand_a < operand_b}; // SLT
+        // {CONTROL_BITS'('b110)}:
+        // {CONTROL_BITS'('b111)}:
         default:
             result = {DATA_WIDTH{1'b0}}; // OUTPUT ZERO
     endcase
