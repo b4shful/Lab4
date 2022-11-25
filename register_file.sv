@@ -9,7 +9,7 @@ module register_file #(
     input logic [ADDRESS_WIDTH-1:0] a3, // WD3 address
     input logic [DATA_WIDTH-1:0]    wd3, // wd3 data input
     output logic [DATA_WIDTH-1:0]   rd1, // rd1 data output
-    output logic [DATA_WIDTH-1:0]   rd2  // rd2 data output
+    output logic [DATA_WIDTH-1:0]   rd2,  // rd2 data output
     output logic [DATA_WIDTH-1:0]   a0 // permanent access to x10 register for the purposes of this lab    
 );
 
