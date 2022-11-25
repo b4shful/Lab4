@@ -47,7 +47,7 @@ always_ff @(posedge clk) begin
     // if write enabled
     if (we3 == 1'b1)
         // only write if not writing to register x0
-        if(a3 != {DATA_WIDTH{1'b0}}) 
+        if(a3 != {ADDRESS_WIDTH{1'b0}}) 
             // synchronous assignment of write data input to register specified in a3
             regfile_array[a3] <= wd3;
 end
