@@ -20,7 +20,7 @@ int main(int argc, char **argv, char **env){
     top->rst = 0;
 
     // run simulation for many clock cycles
-    for (i=0; i<300; i++){
+    for (i=0; i<5000; i++){
 
         // dump variables into VCD file and toggle clock
         for (clk=0; clk<2; clk++){
@@ -28,7 +28,7 @@ int main(int argc, char **argv, char **env){
             top->clk = !top->clk;
             top->eval();
         }
-        // top->rst = (i<2);
+
         if (Verilated::gotFinish()) exit(0);
     }
     tfp->close();
