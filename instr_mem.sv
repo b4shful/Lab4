@@ -1,4 +1,4 @@
-module inst_mem  #(
+module instr_mem  #(
     parameter   ADDRESS_WIDTH = 32,
                 DATA_WIDTH = 32
 )(
