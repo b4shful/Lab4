@@ -1,2 +1,5 @@
 # Verilator build directory
 obj_dir/
+
+# vscode files (they differ from Mac to PC so we will need to use our own ones appropriately)
+.vscode/
