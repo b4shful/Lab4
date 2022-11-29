@@ -2,7 +2,7 @@ module ALU #(
     parameter CONTROL_BITS = 3,
               DATA_WIDTH = 32
 )(
-    input logic  [MUX_BITS-1:0]      alu_control,
+    input logic  [CONTROL_BITS-1:0]  alu_control,
     input logic  [DATA_WIDTH-1:0]    operand_a,
     input logic  [DATA_WIDTH-1:0]    operand_b,
     output logic [DATA_WIDTH-1:0]    result,
