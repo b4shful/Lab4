@@ -4,7 +4,7 @@ module PC #(
     //interface signals
     input logic clk,
     input logic rst,
-    input logic [1:0] pcsrc,
+    input logic pcsrc,
     input logic [WIDTH-1:0] ImmOp,
     output logic [WIDTH-1:0] count
 );

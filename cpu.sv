@@ -7,9 +7,9 @@ module cpu #(
 );
 
 logic [DATA_WIDTH-1:0] pc;
-logic [DATA_WIDTH-1:0] branch_pc;
-logic [DATA_WIDTH-1:0] inc_pc;
-logic [DATA_WIDTH-1:0] next_pc;
+// logic [DATA_WIDTH-1:0] branch_pc;
+// logic [DATA_WIDTH-1:0] inc_pc;
+// logic [DATA_WIDTH-1:0] next_pc;
 logic                  pc_src;
 logic [DATA_WIDTH-1:0] instr;
 logic                  eq;
@@ -27,20 +27,21 @@ logic [DATA_WIDTH-1:0] alu_op2;
 logic [DATA_WIDTH-1:0] reg_op2;
 
 always_comb begin
-    inc_pc = pc + 4;
-    branch_pc = pc + imm_op;
-    next_pc = pc_src ? branch_pc : inc_pc;
+    // inc_pc = pc + 4;
+    // branch_pc = pc + imm_op;
+    // next_pc = pc_src ? branch_pc : inc_pc;
     rs1 = instr[19:15];
     rs2 = instr[24:20];
     rd = instr[11:7];
     // alu_op2 = alu_src ? imm_op : reg_op2;
 end
 
-pc_reg prog_counter_reg(
+PC pc_section(
     .clk (clk),
     .rst (rst),
-    .pc (pc),
-    .next_pc (next_pc)
+    .pcsrc (pc_src),
+    .ImmOp (imm_op),
+    .count (pc)
 );
 instr_mem instruction_mem(
     .PC (pc),
