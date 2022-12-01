@@ -9,7 +9,7 @@ module sign_extend #(
 always_comb
     case(ImmSrc):
 
-        default: ImmOp = 32b'0
+        default: ImmOp = 1b'0
         //add
         1b'0: ImmOp = {{21instr[31]}, instr[30:25], instr[24:20]}
         //branch
