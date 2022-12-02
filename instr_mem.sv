@@ -3,7 +3,7 @@ module instr_mem  #(
                 DATA_WIDTH = 8
 )(
     input  logic    [ADDRESS_WIDTH-1:0]    PC,
-    output logic    [DATA_WIDTH-1:0]       instr
+    output logic    [ADDRESS_WIDTH-1:0]       instr
 );
 
 logic [DATA_WIDTH-1:0] rom_array [27:0];
