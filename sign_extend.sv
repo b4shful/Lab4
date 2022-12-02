@@ -3,13 +3,13 @@ module sign_extend #(
 )(  
     input   logic       intr[WIDTH-1:20],      
     input   logic       ImmSrc,
-    output  logic       ImmOp
+    output  logic       ImmOp[WIDTH-1:0]
 );
 
 always_comb
     case(ImmSrc):
 
-        default: ImmOp = 1b'0
+        default: ImmOp = 32b'0
         //add
         1b'0: ImmOp = {{21instr[31]}, instr[30:25], instr[24:20]}
         //branch
