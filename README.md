@@ -57,6 +57,8 @@ https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/propos
 
 - Once approved, the PR is merged and the changes are added to main branch
 
+- Once merged, you should `git checkout main` and delete your just-merged branch with `git branch -d <name>` and `git remote prune origin`
+
 # Pulling remote (online) changes to your remote repo
 - Make sure you're in the branch you want to pull from
 - Use `git pull`
