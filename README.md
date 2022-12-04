@@ -17,16 +17,16 @@ EIE2 IAC Lab4 Group 29
 - Make sure you are in ~/Documents/iac directory (cd ~/Documents/iac)
 - Run "git clone https://github.com/b4shful/Lab4.git"
 
+# See files to be changed
+- Use `git status` to see what files have changed/are staged/unstaged
+- Use `git pull` to get any new files on your branch (e.g ones added by someone else on the same branch or on a different PC)
+
 # Branching
 We will use "branches" to create new features, this is so no one commits changes to the (ultra sacred) "main" branch
 ![gitbranch](https://user-images.githubusercontent.com/28313200/202689014-069fd77e-33ff-4a0e-ae4f-93839e2e3509.png)
 
 - To create a branch, use `git branch <branch_name>` (replace <branch_name> with the name of your branch without the brackets, branch names can't have spaces, name your branch after the general task you are trying to do e.g "ALU" or "ProgramCounter"
 - To switch to that branch (you will be on "main" by default), do `git checkout <branch_name>`, this will switch to the branch you specified, so all changes will be committed to this branch.
-
-# See files to be changed
-- Use `git status` to see what files have changed/are staged/unstaged
-- Use `git pull` to get any new files on your branch (e.g ones added by someone else on the same branch or on a different PC)
 
 # Stage files to be committed
 - Use `git add <file>` or `git add <directory>` (without the brackets) to "stage" files, this adds them to a "stage" or collection of changes which will be added to the next "commit"
