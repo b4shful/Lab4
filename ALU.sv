@@ -9,7 +9,7 @@ module ALU #(
     output                          result_eq_zero   
 );
 
-// assign result_eq_zero = (result == {DATA_WIDTH{1'b0}});     // This needs looking into
+assign result_eq_zero = (result == {DATA_WIDTH{1'b0}});
 
 always_comb begin
     result = {DATA_WIDTH{1'b0}};
@@ -24,14 +24,8 @@ always_comb begin
         {CONTROL_BITS'('b101)}: result = {{DATA_WIDTH-1{1'b0}}, operand_a < operand_b}; // SLT
         // {CONTROL_BITS'('b110)}:
         // {CONTROL_BITS'('b111)}:
-        3'b110: begin
-            if(operand_a == operand_b) result_eq_zero = 1;
-            else result_eq_zero = 0;
-        end
         default: result = {DATA_WIDTH{1'b0}}; // OUTPUT ZERO
-
     endcase
-
 end
 
 endmodule
