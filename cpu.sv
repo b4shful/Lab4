@@ -14,7 +14,7 @@ logic                  pc_src;
 logic [DATA_WIDTH-1:0] instr;
 logic                  eq;
 logic                  reg_write;
-logic                  alu_ctrl;
+logic [2:0]            alu_ctrl;
 logic                  alu_src;
 logic                  imm_src;
 logic [DATA_WIDTH-1:0] imm_op;
@@ -49,7 +49,7 @@ instr_mem instruction_mem(
 );
 control_unit contr_unit(
     .EQ (eq),
-    .instr (instr),
+    .instr ({instr[14:12], instr[6:0]}),
     .RegWrite (reg_write),
     .ALUctrl (alu_ctrl),
     .ALUsrc (alu_src),
@@ -57,7 +57,7 @@ control_unit contr_unit(
     .PCsrc (pc_src)
 );
 sign_extend sgn_ext(
-    .intr (instr),
+    .instr ({instr[31:20], instr[11:7]}),
     .ImmSrc (imm_src),
     .ImmOp (imm_op)
 );
